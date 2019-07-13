@@ -1,6 +1,6 @@
 ﻿/*
 dnnWerk.at ( https://www.dnnWerk.at )
-Michael Tobisch, 2009-2019
+(C) Michael Tobisch 2009-2019
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
@@ -40,9 +40,9 @@ namespace helferlein.IO
             s = Convert.ToBase64String(b, 0, b.Length);
             return s;
          }
-         catch (Exception ex)
+         catch (Exception)
          {
-            throw ex;
+            throw;
          }
       }
 
@@ -58,9 +58,9 @@ namespace helferlein.IO
             fs.Write(b, 0, b.Length);
             fs.Close();
          }
-         catch (Exception ex)
+         catch (Exception)
          {
-            throw ex;
+            throw;
          }
       }
 
@@ -69,7 +69,6 @@ namespace helferlein.IO
          byte[] b;
          long bytesRead;
          string s;
-
          try 
 	      {
             b = new byte[inputStream.Length];
@@ -78,9 +77,9 @@ namespace helferlein.IO
             s = Convert.ToBase64String(b, 0, b.Length);
             return s;
          }
-	      catch (Exception ex)
-	      {
-		      throw ex;
+	      catch (Exception)
+         {
+		      throw;
 	      }
       }
    }
